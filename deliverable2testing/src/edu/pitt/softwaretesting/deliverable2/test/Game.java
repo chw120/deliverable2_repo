@@ -1,4 +1,4 @@
-package com.laboon;
+package edu.pitt.softwaretesting.deliverable2.test;
 
 import java.util.Scanner;
 
