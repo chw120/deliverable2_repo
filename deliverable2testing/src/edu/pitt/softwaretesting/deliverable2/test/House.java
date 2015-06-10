@@ -21,7 +21,7 @@ public class House {
 	public String getCurrentRoomInfo() {
 		if (_currentRoom < 0 || _currentRoom >= _numRooms) {
 			_currentRoom = 0;
-			return "You are in a magical land!  But you are returned to the beginning!";
+			return "You are in a magical land! But you are returned to the beginning!";
 		} else {
 			return _rooms[_currentRoom].getDescription();
 		}
