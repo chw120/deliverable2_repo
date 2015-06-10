@@ -20,7 +20,7 @@ public class GameTest {
 	public void test1DoSomething(){
 
 		int result1 = game.doSomething("N");
-		assertEquals(0, result1);
+		assertEquals(result1, 0);
 		verify(house,times(1)).moveNorth();
 
 	}
@@ -31,7 +31,7 @@ public class GameTest {
 	public void test2DoSomething(){
 
 		int result2 = game.doSomething("n");
-		assertEquals(0, result2);
+		assertEquals(result2, 0);
 		verify(house,times(0)).moveNorth();
 	}
 
@@ -42,7 +42,7 @@ public class GameTest {
 
 		when(player.drink()).thenReturn(true);
 		int result3 = game.doSomething("d");
-		assertEquals(1, result3);
+		assertEquals(result3, 1);
 		verify(player,times(1)).drink();
 	}
 }

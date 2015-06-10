@@ -7,13 +7,13 @@ import org.junit.*;
 public class CoffeeMakerTest {
 
 	//coffeemaker
-	//test runAgrs()
+	//test runAgrs() that this method always return 0
 	@Test
 	public void testRunArgs(){
 		CoffeeMaker coffeemaker = new CoffeeMaker();
 		
 		int result = coffeemaker.runArgs("str");
-		assertEquals(0, result);
+		assertEquals(result, 0);
 	}
 	
 	

@@ -21,7 +21,7 @@ public class HouseTest {
 		house.moveSouth();
 		String result1 = house.getCurrentRoomInfo();
 		String str1 = "You are in a magical land! But you are returned to the beginning!";
-		assertArrayEquals(str1.getBytes(), result1.getBytes());
+		assertArrayEquals(result1.getBytes(), str1.getBytes());
 
 	}
 
