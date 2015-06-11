@@ -16,7 +16,7 @@ public class GameTest {
 	private Game game = new Game(player, house);
 
 	//game
-	//test1 dosomethong(str)
+	//test1 dosomething(str)
 	@Test
 	public void test1DoSomething(){
 
@@ -24,28 +24,29 @@ public class GameTest {
 		int result1 = game.doSomething("N");
 		//ASSERTIONS
 		assertEquals(result1, 0);
-		verify(house,times(1)).moveNorth();
-
+		verify(house, times(1)).moveNorth();
+		verify(house, never()).moveSouth();
+		
 	}
 
 	//game
-	//test2 dosomethong(str)
+	//test2 dosomething(str)
 	@Test
 	public void test2DoSomething(){
 
 		int result2 = game.doSomething("n");
 		assertEquals(result2, 0);
-		verify(house,times(0)).moveNorth();
+		verify(house, times(0)).moveNorth();
 	}
 
 	//game
-	//test3 dosomethong(str)
+	//test3 dosomething(str)
 	@Test
 	public void test3DoSomething(){
 
 		when(player.drink()).thenReturn(true);
 		int result3 = game.doSomething("d");
 		assertEquals(result3, 1);
-		verify(player,times(1)).drink();
+		verify(player, times(1)).drink();
 	}
 }
