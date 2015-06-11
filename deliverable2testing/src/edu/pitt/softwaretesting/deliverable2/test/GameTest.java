@@ -10,6 +10,7 @@ import static org.mockito.Mockito.*;
 
 public class GameTest {
 
+	//PRECONDITIONS
 	private House house = mock(House.class);
 	private Player player = mock(Player.class);
 	private Game game = new Game(player, house);
@@ -19,7 +20,9 @@ public class GameTest {
 	@Test
 	public void test1DoSomething(){
 
+		//EXECUTION STEP
 		int result1 = game.doSomething("N");
+		//ASSERTIONS
 		assertEquals(result1, 0);
 		verify(house,times(1)).moveNorth();
 

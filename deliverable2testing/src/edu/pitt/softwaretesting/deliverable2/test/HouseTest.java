@@ -1,9 +1,7 @@
 package edu.pitt.softwaretesting.deliverable2.test;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 import org.junit.Test;
 
@@ -38,6 +36,17 @@ public class HouseTest {
 
 	}
 
-
+	//this will eventually check descriptions
+	@Test
+	public void testGetDescription(){
+		Room room = mock(Room.class);
+		when(room.getDescription()).thenReturn("TEST");
+		Room[] rooms = new Room[1];
+		rooms[0] = room;
+		House house= new House(rooms);
+		String result = house.getCurrentRoomInfo();
+		assertEquals(result, "TEST");
+		
+	}
 
 }
