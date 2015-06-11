@@ -49,4 +49,16 @@ public class HouseTest {
 		
 	}
 
+	//house
+	//test generaterooms()
+	@Test
+	public void testGenerateRooms(){
+		
+		Room[] rooms = new Room[1];
+		rooms = house.generateRooms(1);
+		
+		assertTrue(rooms[0].hasCream());
+		
+		
+	}
 }
