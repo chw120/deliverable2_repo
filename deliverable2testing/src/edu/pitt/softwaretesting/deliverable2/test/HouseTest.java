@@ -25,17 +25,6 @@ public class HouseTest {
 
 	//house
 	//test2 getcurrentroominfo()
-	@Test
-	public void test2GetCurrentRoomInfo(){
-
-		Room room = mock(Room.class);
-		house.moveNorth();
-		house.moveNorth();
-		String result2 = house.getCurrentRoomInfo();
-		verify(room,times(1)).getDescription();
-
-	}
-
 	//this will eventually check descriptions
 	@Test
 	public void testGetDescription(){
@@ -54,11 +43,14 @@ public class HouseTest {
 	@Test
 	public void testGenerateRooms(){
 		
-		Room[] rooms = new Room[1];
-		rooms = house.generateRooms(1);
+		Room[] rooms = new Room[2];
+		rooms = house.generateRooms(2);
 		
 		assertTrue(rooms[0].hasCream());
-		
+		assertFalse(rooms[0].hasCoffee());
+		assertFalse(rooms[0].hasSugar());
+		assertFalse(rooms[0].southExit());
+		assertTrue(rooms[0].northExit());
 		
 	}
 }
