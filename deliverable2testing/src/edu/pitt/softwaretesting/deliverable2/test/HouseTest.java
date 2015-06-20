@@ -7,19 +7,17 @@ import org.junit.Test;
 
 public class HouseTest {
 
-	private Room[] rooms = new Room[6];
-	//private Room[] rooms = mock(Room[].class);    ??
-	private House house= new House(rooms);
-
 	//house
 	//test1 getcurrentroominfo()
 	@Test
 	public void test1GetCurrentRoomInfo(){
 
+		House house= new House(6);
 		house.moveSouth();
 		String result1 = house.getCurrentRoomInfo();
 		String str1 = "You are in a magical land! But you are returned to the beginning!";
-		assertArrayEquals(result1.getBytes(), str1.getBytes());
+		assertEquals( str1, result1);
+		assertArrayEquals(str1.getBytes(), result1.getBytes());
 
 	}
 
@@ -34,7 +32,7 @@ public class HouseTest {
 		rooms[0] = room;
 		House house= new House(rooms);
 		String result = house.getCurrentRoomInfo();
-		assertEquals(result, "TEST");
+		assertEquals("TEST", result);
 		
 	}
 
@@ -43,14 +41,18 @@ public class HouseTest {
 	@Test
 	public void testGenerateRooms(){
 		
+		Room room = mock(Room.class);
+		
 		Room[] rooms = new Room[2];
+		House house= new House(rooms);
 		rooms = house.generateRooms(2);
+		room = rooms[0];
+
 		
-		assertTrue(rooms[0].hasCream());
-		assertFalse(rooms[0].hasCoffee());
-		assertFalse(rooms[0].hasSugar());
-		assertFalse(rooms[0].southExit());
-		assertTrue(rooms[0].northExit());
-		
+		assertTrue(room.hasCream());
+		assertFalse(room.hasCoffee());
+		assertFalse(room.hasSugar());
+		assertFalse(room.southExit());
+		assertTrue(room.northExit());
 	}
 }

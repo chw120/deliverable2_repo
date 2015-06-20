@@ -13,7 +13,7 @@ public class CoffeeMakerTest {
 		CoffeeMaker coffeemaker = new CoffeeMaker();
 		
 		int result = coffeemaker.runArgs("str");
-		assertEquals(result, 0);
+		assertEquals(0, result);
 	}
 	
 	
