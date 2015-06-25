@@ -5,16 +5,25 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import org.junit.Before;
 import org.junit.Test;
+
 import static org.mockito.Mockito.*;
 
 public class GameTest {
 
-	//PRECONDITIONS
-	private House house = mock(House.class);
-	private Player player = mock(Player.class);
-	private Game game = new Game(player, house);
-
+	private House house;
+	private Player player;
+	private Game game;
+	
+	@Before
+	public void setup() {
+		//PRECONDITIONS
+		house = mock(House.class);
+		player = mock(Player.class);
+		game = new Game(player, house);	
+	}
+	
 	//game
 	//test1 dosomething(str)
 	@Test

@@ -72,6 +72,7 @@ public class Room {
         "Cerebral", "Voracious", "Starving", "Full", "Killer", "Wicked", "Rational", "Real",
         "Homemade", "Cigar-Chomping", "Sinister", "Doubting",
         "Robotic", "Monosyllabic", "Maniacal", "Postmodern", "Prehistoric" };
+		System.out.println("pseudorand is " + _pseudoRand);
 		return adjs[(_pseudoRand++ % adjs.length)];
 	}
 	

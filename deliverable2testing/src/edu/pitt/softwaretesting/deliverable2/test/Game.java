@@ -8,6 +8,7 @@ public class Game {
 	private House _house = null;
 	
 	public Game(Player p, House h) {
+		System.out.println("making new game");
 		_player = p;
 		_house = h;
 	}
